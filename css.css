@@ -1,0 +1,945 @@
+
+/*COLORS*/
+.head1 { /*color del header*/
+    background-color:#504136;
+}
+h1{
+    color:#fff;
+}
+nav { /*color del menu de navegacio*/
+    background-color:#504136;  
+}
+nav li a { /*color text enllaços*/
+    color:#fff;
+}
+.enllaç:hover { /*al posarse a sobre d'un enllaç del nav*/
+    background-color:white;
+    color: black;
+} 
+#btn-menu:checked ~ .menu  { /*color del menu hamburguesa*/
+    background-color: #504136;
+}
+main { /*color de la pagina i text*/
+    background-color: #faf7df;
+    color: rgb(0, 0, 0);
+}
+.segon article {  /*color dels articles de adoptar els animals*/
+    background: white;
+    color: black;
+}
+.segon button {  /*color del boto per adoptar els animals*/
+    background: #B0B5C2; 
+    color: white;
+}
+.estadistiques { /*color de l'ultima seccio (tres columnes)*/
+    background: #191919;
+    color: #efefef;
+}
+.estadistiques h3{ /*collor text titol de estadistiques*/
+    color: #FBC107;
+}
+aside{ /*color del aside (barra al lateral o inferior)*/
+    background-color: #619d5c;
+}
+aside article h4 { /*color del apartat del aside on surten els noms dels animals*/
+    background: black;
+    color: white;
+}
+aside article p { /*color del apartat del aside on surt la data*/
+    background: white;
+    color: black;
+}
+footer{ /*color del footer*/
+    background-color: #000000;
+    color: white;
+}
+/*----*/
+
+/*--tipografies--*/
+h1 {
+    font-family: 'Indie Flower', cursive;
+    line-height: 1em;
+}
+
+
+/*----*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*transició del desplaçament al fer clic al menú*/
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 8em 374em 28em;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+/*menú*/
+header {
+    text-align:center;
+}
+h1 {
+    padding: 0.6em 0em 0.2em 0em;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+.head1 {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: 5em 2em;
+    grid-template-columns: 75% 25%;
+}
+.logo {
+    padding-top: 0.7em;
+    margin-top: -1em;
+    padding-left: 2.5em;
+    width: auto;
+    height: 3em;
+    grid-column: 2;
+    grid-row: 2;
+}
+/*navegació del document*/
+nav {
+    
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    align-items:center;
+    padding: 0.2em;
+    flex: 0 0 20%;
+    justify-content: space-around; 
+
+    padding: 0.2em;
+    text-align:center;
+    background: none;
+    /*parts per a que el menu hamburguesa no es vegi fins fer clic al checkbox*/
+    position: absolute;
+    width: 100%;
+    margin-top: 7.9em;
+    margin-left :-100%;
+    transition: all 0.5s;
+}
+/*que no aparegui el recuadre*/
+#btn-menu{   
+    display:none;
+}
+/*que aparegui el menú lateral*/
+header label {
+    display:block;
+    width: 40px;
+    height: 33px;
+    padding: 10px; 
+    
+    grid-column: 1;
+    grid-row: 2;
+} 
+header label:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+}
+#btn-menu:checked ~ .menu  {
+    margin:7.9em 0px 0px 0px;;
+
+}
+/*enllaç*/
+nav li a {
+    display: block;
+    padding: 0.2em 1em;
+    text-decoration: none;
+}     
+nav ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex; 
+    flex-direction: column;  
+}
+nav li {
+    border-right: 1px solid;
+    border: 0px; 
+    font-size: 1em;
+    list-style-type: none;
+    display: inline;
+    padding-right: 10px;
+    padding-bottom: 0.6em;
+}
+main {
+    grid-area: main;
+    margin: auto;
+    max-width: 100%;
+    min-height: 100vh;
+  
+    height: 100%;
+    display: grid;
+  
+    grid-template-columns: 100%;
+    grid-template-rows: 8.3em 47em 99em 90em 48em 91em;
+    grid-template-areas: 
+    "header1"
+    "section1"
+    "section2"
+    "section3"
+    "section4"
+    "aside"
+    ;
+}
+.head2 {
+    grid-area: header1;
+    padding-left: 0em;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap;
+    align-items:stretch;
+    justify-content: stretch;
+}
+/*--Primer article de la primera seccio--*/
+.primer {
+    grid-area: section1;
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: nowrap;
+}
+/*--grid per al primer article--*/
+.intro {
+    display: grid;
+    grid-template-rows: 6em 3.5em 10em;
+    grid-template-columns: 2fr;
+    grid-gap: 1em;
+    justify-items: center;
+}
+/*títol de la pàgina*/
+.title {
+    grid-row: 1;
+    grid-column: 1; 
+    padding-right: 75%;
+    margin: 0.5em 0; 
+    display: grid;
+    grid-template-columns: 1em 1fr;
+    grid-template-rows: 0.64em 0.60em 0.8em 1em; 
+    z-index: 1;
+}
+.title span:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1; 
+}
+.title span:nth-child(2) {
+    grid-row: 2;
+    grid-column: 2; 
+    font-size: 120%
+}
+.title span:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1; 
+}
+.title span:nth-child(4) {
+    grid-row: 4;
+    grid-column: 1.5 / span 2; 
+    font-size: 120%;
+    padding-left:0.3em;
+}
+/*----*/
+.text {
+    grid-row: 2;
+    grid-column: 1 / 3;
+    z-index: 1;
+}
+.baldufa {
+    width:12rem;
+    grid-row: 3;
+    grid-column: 1;
+}
+/*----*/
+article{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+/*segon article del primer section*/
+.serveis {
+    display: grid;
+    grid-template-rows: 2em 1em 2em 1em 2em 1em 2em 1em 3em 6em;
+    grid-template-columns: 100%;
+}
+.serveis h3:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+    text-align: center;
+}
+.serveis h4:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;  
+}
+.serveis p:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+    font-size: 75%;  
+}
+.serveis h4:nth-child(4) {
+    grid-row: 4;
+    grid-column: 1;  
+    text-align: right;  
+}
+.serveis p:nth-child(5) {
+    grid-row: 5;
+    grid-column: 1;
+    font-size: 75%;  
+    text-align: right;  
+}
+.serveis h4:nth-child(6) {
+    grid-row: 6;
+    grid-column: 1;
+}
+.serveis p:nth-child(7) {
+    grid-row: 7;
+    grid-column: 1;
+    font-size: 75%;  
+}
+.serveis h4:nth-child(8) {
+    grid-row: 8;
+    grid-column: 1;      
+    text-align: right;  
+}
+.serveis p:nth-child(9) {
+    grid-row: 9;
+    grid-column: 1;
+    font-size: 75%;      
+    text-align: right;  
+}
+.serveis img:nth-child(10) {
+    grid-row: 10;
+    grid-column: 1 / 4;
+    height:8.7rem;
+    justify-self: center;
+}
+/*----*/
+/*--segon section--*/
+.segon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1em auto;
+    grid-gap: 1rem;
+}
+.segon h3{
+    text-align: center;
+}
+.segon article {
+    display: flex;
+    flex-flow: column;
+    padding: 2rem;
+}
+
+.segon p {
+    margin: 0.6em 0 2rem;
+}
+.segon img {
+    order: -1;
+    align-self: center;
+    width: 100%;
+
+}
+.segon button {
+    display: block;
+    text-align: center;
+    margin-top: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.4rem 0 0.3rem;
+}
+/*----*/
+/*codi collage imatges*/
+.collage {
+    grid-area:section3; 
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 2em 25em;
+} 
+.collage h3 {
+    text-align: center;
+  }
+.wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: auto;
+    max-width: 1200px;
+    max-height: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 2vmin;
+    justify-items: center;
+    align-items: center;
+  } 
+.wrapper img {
+    
+    z-index: 1;
+    transition: all .25s ease-in-out;
+    grid-column: span 2;
+    max-width: 100%;
+    margin-bottom: -52%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transform: scale(1);
+    transition: all .25s;
+  }
+/*----*/
+
+
+/*info a baix*/
+.estadistiques {
+    grid-area: section4;
+    display: grid;
+    grid-template-rows: 2em 12em 12em 12em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 2rem; 
+}
+.estadistiques h3 {
+    display:flex;
+    grid-row:1;
+    grid-column: 1;
+    text-align: center;
+}
+.estadistiques div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 5% 1em;
+    padding: 0 1rem; 
+}
+.estadistiques div h6 {
+    text-align: center;
+    margin: 1em 0 0.25em;
+    font-size: 1.5rem;
+}
+.estadistiques div img {
+    padding: 1em 0em 1em 0em;
+    max-width: 100px; 
+}
+.estadistiques div p {
+    font-size: 3.5rem;
+    margin-bottom: 0; 
+}
+/*----*/
+/*aside*/
+aside {
+    grid-area: aside;
+    padding: 0.2em;
+}
+aside h3{
+    text-align: center;
+}
+aside article {
+    display: grid;
+    grid-template-columns: 3% 8% 68% 14%;
+    grid-template-rows: 11em 5em;
+    width: auto;
+    height: auto;
+}
+aside article h4 {
+    grid-column: 2 / 5;
+    grid-row: 2;
+    align-self: end;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: normal;
+    z-index: 1;
+}
+aside article img {
+    grid-column: 3 / 3;
+    grid-row: 1 / 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 100%
+}
+aside article p {
+    grid-column: 2 / 5;
+    grid-row: 3 / 5;
+    align-self: start;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    font-size: 90%;
+    z-index: 1;
+}
+/*----*/ 
+section {
+    padding: 0.2em;
+}
+.segon {
+    grid-area: section2;
+}
+.tercer {
+    grid-area: section3;
+}
+footer {
+    grid-area: footer;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+footer iframe {
+    width: auto;
+    height: auto;
+}
+/*adaptació collage per tamany mobil*/
+@media (min-width: 250px) and (max-width: 1000px) {
+    .wrapper img:nth-child(2n + 1) {
+        grid-column: 2 / span 2;
+    }
+}
+/*correcció tamany per algunes pantalles*/
+@media (min-width: 400px) and (max-width: 500px) {
+    body {
+        grid-template-rows: 8em 387em 28em;
+    }
+    main {
+        grid-template-rows: 9em 47em 97em 99em 47em;
+    }
+    nav li {
+        padding-bottom: 0.8em;;
+    }
+    nav{
+        margin-top: 7.5;
+    }
+    #btn-menu:checked ~ .menu {
+        margin: 7.5em 0px 0px 0px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 399px) {
+    body {
+        grid-template-rows: 8em 382em 28em;
+    }
+    
+    main {
+        grid-template-rows: 8.5em 47em 97em 99em 47em;
+    }
+    
+}
+/*tamany tablet*/
+@media (min-width: 500px) and (max-width: 1000px) {
+    
+    body {
+        font-size: 150%;
+        grid-template-rows: 7.5em 330em 26em;
+        grid-template-columns: 100%;
+    }
+    .logo{
+        margin-top: -2em;
+        padding-left: 4.5em;
+    }
+    header label {
+        padding-top:0.2em;
+    }
+    nav {
+        padding:0.75em;
+    }
+    nav{
+        margin-top: 6.5em;
+    }
+    #btn-menu:checked ~ .menu {
+        margin: 6.5em 0px 0px 0px;
+    }
+    nav li {
+        font-size: 1.3em;
+    }
+    /*--fi header--*/
+    main {
+        grid-template-rows: 10.5em 43em 55em 130em 16em 76em;
+    }
+    /*slider*/
+    .head2 {
+        grid-column-end: span 2;
+    }
+    .slider ul {
+        padding-top:8px
+    }
+    /*----*/
+    article{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    /*--Primer article de la primera seccio--*/
+    .primer {
+        display: grid;
+        grid-auto-rows: 11em 15em;
+        grid-gap: 2em;
+    }
+    /*--grid per al primer article--*/
+    .intro {
+        grid-template-rows: 6em 4em;
+        grid-template-columns: 58% 29%;
+    }
+    .title {
+        padding-right: 35.5%;
+        grid-template-columns: 1em 5em;
+        grid-template-rows: 0.64em 0.7em 0.8em 1.5em;
+    }
+    .text {
+        grid-row: 2;
+        grid-column: 1;
+        z-index: 1;
+    }
+    .baldufa {
+        width: 17rem;
+        grid-row: 1;
+        grid-column: 2;
+        clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+        padding: 2.5em 0.85em 1em
+    }
+    /*----*/
+    .serveis img:nth-child(10){
+        height: 19.7rem;
+    }
+    /*--segon section--*/
+    .segon {
+        grid-template-rows: 2em 26em 24em;
+    grid-template-columns: 23% 23% 23% 23%
+    }
+    .segon h3{
+        text-align: center;
+        grid-column: 1 / 5;
+    }
+    .row2 {
+        grid-column:span 2;
+    }
+    .row3 {
+        grid-row: 3;
+        grid-column: 2/4;
+    }
+    .estadistiques {
+        grid-template-rows: 4em 10em;
+    }
+    .estadistiques h3 {
+        grid-column: 1 / 4;
+        align-items: center;
+        justify-content: center;
+    }
+    .estadistiques div {
+        grid-row:2;
+        margin: -2em 5% 1em;
+    }
+    aside article {
+        grid-template-rows: 11em 2em 2em 1em 1em;
+        grid-template-columns: 20% 9% 41% 18%;
+    }
+    aside article h4 {
+        grid-row: 2;
+    }
+    aside article img {
+        grid-row: 1 / 5;
+    }
+    aside article p {
+        grid-row: 3 / 4;
+    }
+}
+/*tamany ordinador*/
+@media (min-width: 1001px) {
+    body {
+        font-size: 150%;
+        grid-template-rows: 7em 113em 14em;
+        grid-template-columns: 100%;
+    }
+    header label {
+        display:none;
+    }
+    .head1 {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between; 
+        align-self: auto;
+    }
+    h1 {
+        padding: 0.6em 0em 0.2em 1em;
+    }
+    .logo{
+        flex: 0 0 9%;
+        margin-top: 0.5em;
+        padding-right: 1em;
+        width: auto;
+        height: 5em;
+    }
+    nav {
+        position: relative;
+        width: 20%;
+        margin-left :0%;
+        transition: all 0.5s;
+        flex: 0 0 63%;
+        justify-content: space-around; 
+        align-items:center;
+        margin-top: 0%;
+    }
+    nav ul {
+        flex-direction: row;
+    }
+    nav li {
+        border-top: 1px solid #fff;
+        border: none;
+    }
+    #btn-menu:checked ~ .menu  {
+        margin: 0;
+    }
+    .enllaç {
+        margin-left: 1.5em;
+        padding: 0em;
+    }
+    /*--fi header--*/
+    main {
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 14.5em 26em 26em 30em 17em;
+        grid-template-areas:
+            "header1 header1"
+            "section1 aside"
+            "section2 aside"
+            "section3 aside"
+            "section4 section4"
+            "footer footer";
+    }
+    /*slider*/
+    .head2 {
+        grid-column-end: span 2;
+    }
+    /*----*/
+    /*--Primer article de la primera seccio--*/
+    .primer {
+        display: grid;
+        grid-auto-rows: 11em 15em;
+        grid-gap: 2em;
+        /*background:url(./media/1.jpg); /*posar la imatge al fondo*/
+    }
+    /*--grid per al primer article--*/
+    .intro {
+        grid-template-rows: 6em 5em;
+        grid-template-columns: 60% 32%;
+    }
+    .title {
+        padding-right: 62.5%;
+        grid-template-columns: 1em 5em;
+        grid-template-rows: 0.64em 0.7em 0.8em 1.5em;
+    }
+    .text {
+        grid-row: 2;
+        grid-column: 1;
+        z-index: 1;
+    }
+    .baldufa {
+        width: 20rem;
+        grid-row: 1;
+        grid-column: 2;
+        clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+        padding: 1.85em 0.85em 1em
+    }
+    /*----*/
+    article {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    /*segon article del primer section*/
+    .serveis {
+        grid-template-rows: 2em 1.5em 3.5em 1.5em 4.5em;
+        grid-template-columns: 33% 33% 33%;
+    }
+    .serveis h3:nth-child(1) {
+        grid-column: 1 / 4;
+    }
+    .serveis h4:nth-child(4) {
+        grid-row: 2;
+        grid-column: 3;  
+    }
+    .serveis p:nth-child(5) {
+        grid-row: 3;
+        grid-column: 3;  
+    }
+    .serveis h4:nth-child(6) {
+        grid-row: 4;
+    }
+    .serveis p:nth-child(7) {
+        grid-row: 5;
+    }
+    .serveis h4:nth-child(8) {
+        grid-row: 4;
+        grid-column: 3;  
+    }
+    .serveis p:nth-child(9) {
+        grid-row: 5;
+        grid-column: 3;
+    }
+    .serveis img:nth-child(10) {
+        grid-row: 2;
+        grid-column: 2;
+        height: 13.3rem;
+        justify-self: center;
+        padding: 0.5em;
+        margin-top: 1em;
+        clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+    }
+    /*----*/
+    /*--segon section--*/
+    .segon {
+        grid-template-rows: 2em auto;
+        grid-template-columns: repeat(3, minmax(10em, 18.5em));
+        justify-content: space-evenly;
+    }
+    .segon h3{
+        text-align: center;
+        grid-column: 1 / 4;
+    }
+    .segon article {
+        grid-row: 2;
+    }
+    /*collage*/
+    .collage {
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 2em 25em;
+    }
+    .collage h3 {
+        text-align: center;
+    }
+    .wrapper {
+        position: relative;
+        flex-grow: 1;
+        margin: auto;
+        max-width: 1200px;
+        max-height: 1200px;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 2vmin;
+        justify-items: center;
+        align-items: center;
+    } 
+    .wrapper img {
+        z-index: 1;
+        transition: all .25s ease-in-out;
+        grid-column: span 2;
+        max-width: 100%;
+        margin-bottom: -52%;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        transform: scale(1);
+        transition: all .25s;
+    }
+    .wrapper img:nth-child(7n + 1) {
+          grid-column: 2 / span 2;
+    }
+    .wrapper img:hover {
+          z-index: 2;      
+          transform: scale(1.5);
+    }
+    /*----*/ 
+    /*info a baix*/
+    .estadistiques {
+        grid-template-rows: 2em 12em;
+    }
+    .estadistiques h3 {
+        grid-column: 1 / 4;
+        align-items: center;
+        justify-content: center;
+    }
+    .estadistiques div {
+        grid-row:2;
+        margin: -2em 5% 1em;
+    }
+    aside {
+        grid-row: 2 / 5;
+    }
+    aside article {
+        grid-template-rows: 11em 2em 2em 1em 1em;
+    }
+    aside article h4 {
+        grid-row: 2;
+    }
+    aside article img {
+        grid-row: 1 / 5;
+    }
+    aside article p {
+        grid-row: 3 / 4;
+    }     
+    footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+/*Codi de Slider*/
+.slider {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    /*si no es fica, surt inici-final de l'altra*/
+}  
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: cambio 20s infinite ease;
+    animation-direction: alternate; 
+      /*quan canvia de direcció l'última imatge es veu el doble de temps ja que passa a ser la primera img en sentit contrari*/
+}
+.slider li {
+    width: 100%;
+    list-style: none;
+}   
+.slider img {
+    width: 100% /*una imatge es el 100% de l'animació del @keyframes*/
+}
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+        /*quan comença esta al 0*/
+    }
+    16% {
+        margin-left: 0;
+        /*del 0-16 esta quiet*/
+    }
+    21% {
+        /*del 17-21 fa el mov (5% de 20 = 1s)*/
+        margin-left: -100%;
+    }
+    37% {
+        /*del 22-37% quiet*/
+        margin-left: -100%;
+    }
+    42% {
+        /*del 38 al 42 es mou a -200 (mov esquerra)*/
+        margin-left: -200%;
+    }
+    58% {
+        /*del 43-58 quiet*/
+        margin-left: -200%;
+    }
+    63% {
+        /*del 59-63 mov esquerra*/
+        margin-left: -300%;
+    }
+    79% {
+        /*del 64-79 quiet*/
+        margin-left: -300%;
+      }
+    84% {
+        /*del 80 al 84 es mou a -200 (mov esquerra)*/
+        margin-left: -400%;
+      }
+    100% {
+        /*quiet*/
+        margin-left: -400%;
+    }
+}
+
