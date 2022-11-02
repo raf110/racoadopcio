@@ -515,7 +515,7 @@ footer iframe {
         padding-bottom: 0.8em;;
     }
     nav{
-        margin-top: 7.5;
+        margin-top: 7.5em;
     }
     #btn-menu:checked ~ .menu {
         margin: 7.5em 0px 0px 0px;
