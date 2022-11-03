@@ -28,8 +28,8 @@ main { /*color de la pagina i text*/
     color: black;
 }
 .segon button {  /*color del boto per adoptar els animals*/
-    background: #B0B5C2; 
-    color: white;
+    background: #c1c9de;
+    color: #191919;
 }
 .estadistiques { /*color de l'ultima seccio (tres columnes)*/
     background: #191919;
